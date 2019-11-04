@@ -21,109 +21,188 @@ https://mp.weixin.qq.com/wxopen/plugindevdoc?appid=wx8c631f7e9f2465e1
 ![链接](./doc/one.jpg)
 ![链接](./doc/two.jpg)
 
-## 1.普通文本组件复写示例
+由于区分原始插件和复写插件, 所以当前页面将插件配置项在 `rewritePluginPage.js` 和 `originalPluginPage.js` 中初始化
+
+在 `rewritePluginPage`中初始化
+```js
+
+var plugin = requirePlugin("myPlugin");
+plugin.init({
+  appid: "VEgbxLa9kYqzGOzstdeSF3xDbkS9zK",
+  // textToSpeech: true,
+  // guideList: [],
+  welcome: '请问需要什么帮助',
+  // background: "#eee",
+  guideCardHeight: 50,
+  operateCardHeight: 120,
+  // history: true,
+  // historySize: 60,
+  // navHeight: 0,
+  success: () => {
+    this.setData({
+      flag: true
+    })
+  },
+  fail: error => {}
+});
+
+```
+
+在 `originalPluginPage`中初始化
+```js
+
+var plugin = requirePlugin("myPlugin");
+plugin.init({
+  appid: "VEgbxLa9kYqzGOzstdeSF3xDbkS9zK",
+  // textToSpeech: true,
+  // guideList: [],
+  welcome: '请问需要什么帮助',
+  // background: "#eee",
+  // guideCardHeight: 40,
+  // operateCardHeight: 145,
+  // history: true,
+  // historySize: 60,
+  // navHeight: 0,
+  success: () => {
+    this.setData({
+      flag: true
+    })
+  },
+  fail: error => {}
+});
+
+```
+
+在 `app.js` 中初始化
+```js
+
+var plugin = requirePlugin("myPlugin");
+plugin.init({
+  appid: "VEgbxLa9kYqzGOzstdeSF3xDbkS9zK",
+  // textToSpeech: true,
+  // guideList: [],
+  welcome: '请问需要什么帮助',
+  // background: "#eee",
+  guideCardHeight: 50,
+  operateCardHeight: 120,
+  // history: true,
+  // historySize: 60,
+  // navHeight: 0,
+  success: () => {
+    this.setData({
+      flag: true // 在页面中将这个flag字段的判断删除
+    })
+  },
+  fail: error => {}
+});
+
+```
+
+在 `rewritePluginPage.json` 中引入复写组件
+
+### 1.普通文本组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customTextMessage": "../customTextMessage/customTextMessage"
+    "customTextMessage": "../components/customTextMessage/customTextMessage"
   }
 }
 
 ```
 
-## 2.天气组件复写示例
+### 2.天气组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customWeatherMessage": "../customWeatherMessage/customWeatherMessage"
+    "customWeatherMessage": "../components/customWeatherMessage/customWeatherMessage"
   }
 }
 
 ```
 
-## 3.图片组件复写示例
+### 3.图片组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customImageMessage": "../customImageMessage/customImageMessage"
+    "customImageMessage": "../components/customImageMessage/customImageMessage"
   }
 }
 
 ```
 
-## 4.引导消息组件复写示例
+### 4.引导消息组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customGuideCard": "../customGuideCard/customGuideCard"
+    "customGuideCard": "../components/customGuideCard/customGuideCard"
   }
 }
 
 ```
 
-## 5. 底部操作区域组件复写示例
+### 5. 底部操作区域组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customOperateCard": "../customOperateCard/customOperateCard"
+    "customOperateCard": "../components/customOperateCard/customOperateCard"
   }
 }
 
 ```
 
-## 6. query组件复写示例
+### 6. query组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customQueryMessage": "../customQueryMessage/customQueryMessage"
+    "customQueryMessage": "../components/customQueryMessage/customQueryMessage"
   }
 }
 
 ```
 
-## 7. 音乐组件复写示例
+### 7. 音乐组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customMusicMessage": "../customMusicMessage/customMusicMessage"
+    "customMusicMessage": "../components/customMusicMessage/customMusicMessage"
   }
 }
 
 ```
 
-## 8. 新闻组件复写示例
+### 8. 新闻组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customNewsMessage": "../customNewsMessage/customNewsMessage"
+    "customNewsMessage": "../components/customNewsMessage/customNewsMessage"
   }
 }
 
 ```
 
-## 9. 暂不支持组件复写示例
+### 9. 暂不支持组件复写示例
 
 ```json
 
 {
   "usingComponents": {
-    "customUnsupportedMessage": "../customUnsupportedMessage/customUnsupportedMessage"
+    "customUnsupportedMessage": "../components/customUnsupportedMessage/customUnsupportedMessage"
   }
 }
 
