@@ -1,0 +1,6 @@
+<view class="container" >
+  <view class="content" style="height: 100vh">
+    <view class="originalPlugin" bindtap="goOriginalPlugin">原始插件</view>
+    <view class="rewriteComponent" bindtap="goRewriteComponent">复写组件</view>
+  </view>
+</view>

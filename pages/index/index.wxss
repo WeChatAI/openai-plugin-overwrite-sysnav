@@ -1,0 +1,27 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+}
+.content {
+  width: 100%;
+  padding-top: 100px;
+  box-sizing: border-box;
+}
+.originalPlugin {
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  width: 200px;
+  margin: 0 auto;
+  background: #eeeeee;
+  border-radius: 10px;
+}
+.rewriteComponent {
+  background: rgba(231,244,255,1);
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+  width: 200px;
+  margin: 40px auto;
+  border-radius: 10px;
+}

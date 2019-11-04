@@ -1,0 +1,18 @@
+<!-- 系统导航 -->
+<view class="container" wx:if="{{flag}}">
+  <view class="" style="height: 100vh">
+    <chat 
+      bind:queryCallback="getQueryCallback" 
+      bind:backHome="goBackHome"
+      generic:textMessage="customTextMessage"
+      generic:weatherMessage="customWeatherMessage"
+      generic:imageMessage="customImageMessage"
+      generic:guideCard="customGuideCard"
+      generic:queryMessage="customQueryMessage"
+      generic:operateCard="customoperateCard"
+      generic:musicMessage="customMusicMessage"
+      generic:newsMessage="customNewsMessage"
+      generic:unsupportedMessage="customUnsupportedMessage"
+    ></chat>
+  </view>
+</view>
