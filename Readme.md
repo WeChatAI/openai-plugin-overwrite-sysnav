@@ -73,7 +73,7 @@ plugin.init({
 
 ```
 
-在 `app.js` 中初始化
+如果在 `app.js` 中初始化, 需要将 `rewritePluginPage.wxml` 中 `wx:if="{{flag}}"`删除
 ```js
 
 var plugin = requirePlugin("myPlugin");
@@ -89,9 +89,6 @@ plugin.init({
   // historySize: 60,
   // navHeight: 0,
   success: () => {
-    this.setData({
-      flag: true // 在页面中将这个flag字段的判断删除
-    })
   },
   fail: error => {}
 });
@@ -106,7 +103,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customTextMessage": "../components/customTextMessage/customTextMessage"
+    "customTextMessage": "../../components/customTextMessage/customTextMessage"
   }
 }
 
@@ -118,7 +115,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customWeatherMessage": "../components/customWeatherMessage/customWeatherMessage"
+    "customWeatherMessage": "../../components/customWeatherMessage/customWeatherMessage"
   }
 }
 
@@ -130,7 +127,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customImageMessage": "../components/customImageMessage/customImageMessage"
+    "customImageMessage": "../../components/customImageMessage/customImageMessage"
   }
 }
 
@@ -142,7 +139,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customGuideCard": "../components/customGuideCard/customGuideCard"
+    "customGuideCard": "../../components/customGuideCard/customGuideCard"
   }
 }
 
@@ -154,7 +151,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customOperateCard": "../components/customOperateCard/customOperateCard"
+    "customOperateCard": "../../components/customOperateCard/customOperateCard"
   }
 }
 
@@ -166,7 +163,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customQueryMessage": "../components/customQueryMessage/customQueryMessage"
+    "customQueryMessage": "../../components/customQueryMessage/customQueryMessage"
   }
 }
 
@@ -178,7 +175,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customMusicMessage": "../components/customMusicMessage/customMusicMessage"
+    "customMusicMessage": "../../components/customMusicMessage/customMusicMessage"
   }
 }
 
@@ -190,7 +187,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customNewsMessage": "../components/customNewsMessage/customNewsMessage"
+    "customNewsMessage": "../../components/customNewsMessage/customNewsMessage"
   }
 }
 
@@ -202,7 +199,7 @@ plugin.init({
 
 {
   "usingComponents": {
-    "customUnsupportedMessage": "../components/customUnsupportedMessage/customUnsupportedMessage"
+    "customUnsupportedMessage": "../../components/customUnsupportedMessage/customUnsupportedMessage"
   }
 }
 
